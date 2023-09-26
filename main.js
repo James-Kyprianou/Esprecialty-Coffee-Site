@@ -1,7 +1,18 @@
 window.addEventListener('load', function () {
-  // Show Breakfast section initially and set the title.
-  showMenu('Breakfast', 'Breakfast');
+  // Get the section ID from the anchor in the URL (e.g., '#Beverages')
+  const anchor = window.location.hash;
+
+  if (anchor) {
+    // Remove the '#' character to get the section ID (e.g., 'Beverages')
+    const sectionId = anchor.substring(1);
+    // Show the corresponding section and set the title.
+    showMenu(sectionId, sectionId);
+  } else {
+    // If no anchor is present, show the default section (e.g., 'Breakfast')
+    showMenu('Breakfast', 'Breakfast');
+  }
 });
+
 let currentSection = 'Breakfast';
 
 function showMenu(sectionId, title) {
@@ -30,19 +41,6 @@ function showMenu(sectionId, title) {
 
   // Set the title.
   document.getElementById('menuTitle').textContent = title;
-
-  // Scroll to the selected section smoothly
-  scrollToSection(sectionId);
-}
-
-function scrollToSection(sectionId) {
-  const targetSection = document.getElementById(sectionId);
-  if (targetSection) {
-    window.scrollTo({
-      top: targetSection.offsetTop,
-      behavior: 'smooth'
-    });
-  }
 }
 /*
 window.addEventListener('load', function () {
