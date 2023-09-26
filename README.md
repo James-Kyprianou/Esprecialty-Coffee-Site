@@ -1,3 +1,3 @@
 # Esprecialty Coffee Site
 
-JavaScript code used for Esprecialty Coffee Wordpress site.
+JavaScript code used for Esprecialty Coffee WordPress site.
