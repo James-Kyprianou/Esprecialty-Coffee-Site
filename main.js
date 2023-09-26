@@ -1,37 +1,39 @@
-    // Home page scroll button. //
-	
-	// Function to hide scroll button when the target element is in view. Also enables the fade animation.
-	function hideScrollButton() {
-		const scrollButton = document.getElementById('scroll-button');
-        const scrollTarget = document.getElementById('scroll-target');
-		
-		if (scrollButton && scrollTarget) {
-			const scrollButtonRect = scrollButton.getBoundingClientRect();
-			const scrollTargetRect = scrollTarget.getBoundingClientRect();
-			
-			if (scrollButtonRect.bottom < scrollTargetRect.top) {
-				scrollButton.classList.add('fade-out');
-			} else {
-				scrollButton.classList.remove('fade-out');
-				}
-			}
-		}
-	// Function to check if the user has scrolled to the very top of the page.
-	function scrollToTop() {
-		hideScrollButton();
-		if (window.scrollY === 0) {
-			const scrollButton = document.getElementById('scroll-button');
-		if (scrollButton) {
-			scrollButton.classList.remove('fade-out');
-			}
-		}
-	}
-	window.addEventListener('scroll', scrollToTop);
-	hideScrollButton();
+// Home page scroll button. //
 
-	// Menu page functionality. //
-	
-	document.addEventListener('DOMContentLoaded', function () {
+// Function to hide scroll button when the target element is in view. Also enables the fade animation.
+function hideScrollButton() {
+    const scrollButton = document.getElementById('scroll-button');
+    const scrollTarget = document.getElementById('scroll-target');
+
+    if (scrollButton && scrollTarget) {
+        const scrollButtonRect = scrollButton.getBoundingClientRect();
+        const scrollTargetRect = scrollTarget.getBoundingClientRect();
+
+        if (scrollButtonRect.bottom < scrollTargetRect.top) {
+            scrollButton.classList.add('fade-out');
+        } else {
+            scrollButton.classList.remove('fade-out');
+        }
+    }
+}
+
+// Function to check if the user has scrolled to the very top of the page.
+function scrollToTop() {
+    hideScrollButton();
+    if (window.scrollY === 0) {
+        const scrollButton = document.getElementById('scroll-button');
+        if (scrollButton) {
+            scrollButton.classList.remove('fade-out');
+        }
+    }
+}
+
+window.addEventListener('scroll', scrollToTop);
+hideScrollButton();
+
+// Menu page functionality. //
+
+document.addEventListener('DOMContentLoaded', function () {
     const fragment = window.location.hash.substring(1); // Get the id without the '#'.
     if (fragment) {
         // If correct id, show the corresponding section.
@@ -47,7 +49,9 @@
         setActiveNavItem('Breakfast');
     }
 });
+
 let currentSection = 'Breakfast';
+
 function showMenu(sectionId, title) {
     // Hide the current section.
     const current = document.getElementById(currentSection);
@@ -63,6 +67,7 @@ function showMenu(sectionId, title) {
     // Set the title.
     document.getElementById('menuTitle').textContent = title;
 }
+
 function setActiveNavItem(sectionId) {
     const navItems = document.querySelectorAll('.nav-link');
     navItems.forEach(item => {
