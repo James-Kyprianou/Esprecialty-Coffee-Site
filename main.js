@@ -1,4 +1,4 @@
-/*
+
 window.addEventListener('load', function () {
   // Show Breakfast section initially and set the title.
   showMenu('Breakfast', 'Breakfast');
@@ -27,8 +27,8 @@ function showMenu(sectionId, title) {
   // Set the title.
   document.getElementById('menuTitle').textContent = title;
 }
-*/
 
+/*
 // Menu Page //
 		
 document.addEventListener('DOMContentLoaded', function () {
@@ -62,3 +62,4 @@ function showMenu(sectionId, title) {
     // Set the title.
     document.getElementById('menuTitle').textContent = title;
 }
+*/
