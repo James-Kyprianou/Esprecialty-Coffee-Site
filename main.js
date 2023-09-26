@@ -34,13 +34,13 @@ hideScrollButton();
 // Menu page functionality. //
 
 document.addEventListener('DOMContentLoaded', function () {
-    const fragment = window.location.hash.substring(1); // Get the id without the '#'.
-    if (fragment) {
+    const sectionId = window.location.hash.substring(1); // Get the id without the '#'.
+    if (sectionId) {
         // If correct id, show the corresponding section.
-        showMenu(fragment, fragment);
+        showMenu(sectionId, sectionId);
 
         // Set the active class for the corresponding nav item.
-        setActiveNavItem(fragment);
+        setActiveNavItem(sectionId);
     } else {
         // If there's no correct id, show the first section of the menu. 
         showMenu('Breakfast', 'Breakfast');
