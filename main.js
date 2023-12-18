@@ -1,4 +1,3 @@
-/*
 // Menu page functionality. //
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -46,4 +45,3 @@ function setActiveNavItem(sectionId) {
         }
     });
 }
-*/
